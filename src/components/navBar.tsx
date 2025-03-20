@@ -7,19 +7,7 @@ const navLinks = [
   {
     href: "/",
     label: "Home",
-  },
-  {
-    href: "/blog",
-    label: "Blog"
-  },
-  {
-    href: "/gallery",
-    label: "Gallery",
-  },
-  {
-    href: "/resume.pdf",
-    label: "Resume",
-  },
+  }
 ]
 
 export default function Navbar() {
