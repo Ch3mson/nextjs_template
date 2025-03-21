@@ -4,8 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { toast } from "sonner"
-import { useEffect } from "react"
-import { useFormState, useFormStatus } from "react-dom"
+import { useActionState, useEffect } from "react"
+import { useFormStatus } from "react-dom"
 import { createUser, FormState } from "@/app/actions"
 
 import { Button } from "@/components/ui/button"
@@ -44,7 +44,7 @@ function SubmitButton() {
 
 export function ProfileForm() {
   const initialState: FormState = { errors: {} };
-  const [state, formAction] = useFormState(createUser, initialState);
+  const [state, formAction] = useActionState  (createUser, initialState);
   
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
